@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Runtime API Examples | 火炬技术部 UI 入职手册</title>
+    <meta name="description" content="适配 UI 设计岗位，帮助新人快速融入团队">
+    <meta name="generator" content="VitePress v1.6.4">
+    <link rel="preload stylesheet" href="/Torch-UI-Handbook/assets/style.CkbJoxHU.css" as="style">
+    <link rel="preload stylesheet" href="/Torch-UI-Handbook/vp-icons.css" as="style">
+    
+    <script type="module" src="/Torch-UI-Handbook/assets/app.D_LzmIu9.js"></script>
+    <link rel="modulepreload" href="/Torch-UI-Handbook/assets/chunks/theme.C1Mhz_SQ.js">
+    <link rel="modulepreload" href="/Torch-UI-Handbook/assets/chunks/framework.BwvlL9Nv.js">
+    <link rel="modulepreload" href="/Torch-UI-Handbook/assets/api-examples.md.DPojZvxS.lean.js">
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  </head>
+  <body>
+    <div id="app"><div class="doc-layout" data-v-4cc28516><header class="doc-header" data-v-4cc28516><div class="header-left" data-v-4cc28516><a href="/" class="site-title" data-v-4cc28516>火炬技术部 UI 入职手册</a></div><div class="header-right" data-v-4cc28516><span class="header-subtitle" data-v-4cc28516>适配 UI 设计岗位，帮助新人快速融入团队</span></div></header><div class="doc-container" data-v-4cc28516><aside class="doc-sidebar" data-v-4cc28516><nav class="sidebar-nav" data-v-4cc28516><!--[--><div class="sidebar-section" data-v-4cc28516><div class="section-header" data-v-4cc28516>🚪 第一部分：入门前置</div><ul class="section-items" data-v-4cc28516><!--[--><li data-v-4cc28516><a href="/part1#1.软硬件工具箱" class="sidebar-link" data-v-4cc28516>1. 软硬件工具箱</a></li><li data-v-4cc28516><a href="/part1#2.业务黑话词典" class="sidebar-link" data-v-4cc28516>2. 业务黑话词典</a></li><li data-v-4cc28516><a href="/part1#3.首周闯关任务卡" class="sidebar-link" data-v-4cc28516>3. 首周闯关任务卡</a></li><!--]--></ul></div><div class="sidebar-section" data-v-4cc28516><div class="section-header" data-v-4cc28516>🗺️ 第二部分：标准工作流</div><ul class="section-items" data-v-4cc28516><!--[--><li data-v-4cc28516><a href="/part2#4.火炬 UI 设计全流程" class="sidebar-link" data-v-4cc28516>4. 火炬 UI 设计全流程</a></li><li data-v-4cc28516><a href="/part2#5.上线后复盘与沉淀" class="sidebar-link" data-v-4cc28516>5. 上线后复盘与沉淀</a></li><!--]--></ul></div><div class="sidebar-section" data-v-4cc28516><div class="section-header" data-v-4cc28516>🛡️ 第三部分：生存法则与红线</div><ul class="section-items" data-v-4cc28516><!--[--><li data-v-4cc28516><a href="/part3#6.设计规范速查" class="sidebar-link" data-v-4cc28516>6. 设计规范速查</a></li><li data-v-4cc28516><a href="/part3#7.协作与沟通铁律" class="sidebar-link" data-v-4cc28516>7. 协作与沟通铁律</a></li><li data-v-4cc28516><a href="/part3#8.职业素养与持续学习" class="sidebar-link" data-v-4cc28516>8. 职业素养与持续学习</a></li><!--]--></ul></div><!--]--></nav></aside><main class="doc-content" data-v-4cc28516><div class="content-wrapper" data-v-4cc28516><div style="position:relative;" data-v-4cc28516><div><h1 id="runtime-api-examples" tabindex="-1">Runtime API Examples <a class="header-anchor" href="#runtime-api-examples" aria-label="Permalink to &quot;Runtime API Examples&quot;">​</a></h1><p>This page demonstrates usage of some of the runtime APIs provided by VitePress.</p><p>The main <code>useData()</code> API can be used to access site, theme, and page data for the current page. It works in both <code>.md</code> and <code>.vue</code> files:</p><div class="language-md vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">md</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;script setup&gt;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">import { useData } from &#39;vitepress&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">const { theme, page, frontmatter } = useData()</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;/script&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## Results</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">### Theme Data</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;pre&gt;{{ theme }}&lt;/pre&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">### Page Data</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;pre&gt;{{ page }}&lt;/pre&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">### Page Frontmatter</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;pre&gt;{{ frontmatter }}&lt;/pre&gt;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h2 id="results" tabindex="-1">Results <a class="header-anchor" href="#results" aria-label="Permalink to &quot;Results&quot;">​</a></h2><h3 id="theme-data" tabindex="-1">Theme Data <a class="header-anchor" href="#theme-data" aria-label="Permalink to &quot;Theme Data&quot;">​</a></h3><pre>{
+  &quot;nav&quot;: [
+    {
+      &quot;text&quot;: &quot;首页&quot;,
+      &quot;link&quot;: &quot;/&quot;
+    },
+    {
+      &quot;text&quot;: &quot;设计规范&quot;,
+      &quot;link&quot;: &quot;/part3#6-设计规范速查&quot;
+    }
+  ],
+  &quot;sidebar&quot;: [
+    {
+      &quot;text&quot;: &quot;🚪 第一部分：入门前置&quot;,
+      &quot;collapsed&quot;: false,
+      &quot;items&quot;: [
+        {
+          &quot;text&quot;: &quot;1. 软硬件工具箱&quot;,
+          &quot;link&quot;: &quot;/part1#1.软硬件工具箱&quot;
+        },
+        {
+          &quot;text&quot;: &quot;2. 业务黑话词典&quot;,
+          &quot;link&quot;: &quot;/part1#2.业务黑话词典&quot;
+        },
+        {
+          &quot;text&quot;: &quot;3. 首周闯关任务卡&quot;,
+          &quot;link&quot;: &quot;/part1#3.首周闯关任务卡&quot;
+        }
+      ]
+    },
+    {
+      &quot;text&quot;: &quot;🗺️ 第二部分：标准工作流&quot;,
+      &quot;collapsed&quot;: false,
+      &quot;items&quot;: [
+        {
+          &quot;text&quot;: &quot;4. 火炬 UI 设计全流程&quot;,
+          &quot;link&quot;: &quot;/part2#4.火炬 UI 设计全流程&quot;
+        },
+        {
+          &quot;text&quot;: &quot;5. 上线后复盘与沉淀&quot;,
+          &quot;link&quot;: &quot;/part2#5.上线后复盘与沉淀&quot;
+        }
+      ]
+    },
+    {
+      &quot;text&quot;: &quot;🛡️ 第三部分：生存法则与红线&quot;,
+      &quot;collapsed&quot;: false,
+      &quot;items&quot;: [
+        {
+          &quot;text&quot;: &quot;6. 设计规范速查&quot;,
+          &quot;link&quot;: &quot;/part3#6.设计规范速查&quot;
+        },
+        {
+          &quot;text&quot;: &quot;7. 协作与沟通铁律&quot;,
+          &quot;link&quot;: &quot;/part3#7.协作与沟通铁律&quot;
+        },
+        {
+          &quot;text&quot;: &quot;8. 职业素养与持续学习&quot;,
+          &quot;link&quot;: &quot;/part3#8.职业素养与持续学习&quot;
+        }
+      ]
+    }
+  ],
+  &quot;socialLinks&quot;: [
+    {
+      &quot;icon&quot;: &quot;github&quot;,
+      &quot;link&quot;: &quot;https://github.com/zmkido-ship-it/Torch-UI-Handbook&quot;
+    }
+  ],
+  &quot;footer&quot;: {
+    &quot;message&quot;: &quot;辽宁火炬网络科技文化有限责任公司 技术部&quot;,
+    &quot;copyright&quot;: &quot;Copyright © 2025 火炬技术部&quot;
+  },
+  &quot;search&quot;: {
+    &quot;provider&quot;: &quot;local&quot;
+  },
+  &quot;lastUpdated&quot;: {
+    &quot;text&quot;: &quot;最后更新于&quot;,
+    &quot;formatOptions&quot;: {
+      &quot;dateStyle&quot;: &quot;short&quot;,
+      &quot;timeStyle&quot;: &quot;short&quot;
+    }
+  },
+  &quot;editLink&quot;: {
+    &quot;pattern&quot;: &quot;https://github.com/zmkido-ship-it/Torch-UI-Handbook&quot;,
+    &quot;text&quot;: &quot;在 GitHub 上编辑此页&quot;
+  }
+}</pre><h3 id="page-data" tabindex="-1">Page Data <a class="header-anchor" href="#page-data" aria-label="Permalink to &quot;Page Data&quot;">​</a></h3><pre>{
+  &quot;title&quot;: &quot;Runtime API Examples&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;frontmatter&quot;: {
+    &quot;outline&quot;: &quot;deep&quot;
+  },
+  &quot;headers&quot;: [],
+  &quot;relativePath&quot;: &quot;api-examples.md&quot;,
+  &quot;filePath&quot;: &quot;api-examples.md&quot;,
+  &quot;lastUpdated&quot;: 1775808403000
+}</pre><h3 id="page-frontmatter" tabindex="-1">Page Frontmatter <a class="header-anchor" href="#page-frontmatter" aria-label="Permalink to &quot;Page Frontmatter&quot;">​</a></h3><pre>{
+  &quot;outline&quot;: &quot;deep&quot;
+}</pre><h2 id="more" tabindex="-1">More <a class="header-anchor" href="#more" aria-label="Permalink to &quot;More&quot;">​</a></h2><p>Check out the documentation for the <a href="https://vitepress.dev/reference/runtime-api#usedata" target="_blank" rel="noreferrer">full list of runtime APIs</a>.</p></div></div></div></main></div><footer class="doc-footer" data-v-4cc28516><div class="footer-content" data-v-4cc28516><p data-v-4cc28516>辽宁火炬网络科技文化有限责任公司 技术部</p><p data-v-4cc28516>Copyright © 2025 火炬技术部</p></div></footer></div></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"api-examples.md\":\"DPojZvxS\",\"index.md\":\"DGG0tBEv\",\"markdown-examples.md\":\"BvKtbMxU\",\"part1.md\":\"B26tjANM\",\"part2.md\":\"C4KRNjZf\",\"part3.md\":\"Cn5CO_nr\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"火炬技术部 UI 入职手册\",\"description\":\"适配 UI 设计岗位，帮助新人快速融入团队\",\"base\":\"/Torch-UI-Handbook/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"nav\":[{\"text\":\"首页\",\"link\":\"/\"},{\"text\":\"设计规范\",\"link\":\"/part3#6-设计规范速查\"}],\"sidebar\":[{\"text\":\"🚪 第一部分：入门前置\",\"collapsed\":false,\"items\":[{\"text\":\"1. 软硬件工具箱\",\"link\":\"/part1#1.软硬件工具箱\"},{\"text\":\"2. 业务黑话词典\",\"link\":\"/part1#2.业务黑话词典\"},{\"text\":\"3. 首周闯关任务卡\",\"link\":\"/part1#3.首周闯关任务卡\"}]},{\"text\":\"🗺️ 第二部分：标准工作流\",\"collapsed\":false,\"items\":[{\"text\":\"4. 火炬 UI 设计全流程\",\"link\":\"/part2#4.火炬 UI 设计全流程\"},{\"text\":\"5. 上线后复盘与沉淀\",\"link\":\"/part2#5.上线后复盘与沉淀\"}]},{\"text\":\"🛡️ 第三部分：生存法则与红线\",\"collapsed\":false,\"items\":[{\"text\":\"6. 设计规范速查\",\"link\":\"/part3#6.设计规范速查\"},{\"text\":\"7. 协作与沟通铁律\",\"link\":\"/part3#7.协作与沟通铁律\"},{\"text\":\"8. 职业素养与持续学习\",\"link\":\"/part3#8.职业素养与持续学习\"}]}],\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/zmkido-ship-it/Torch-UI-Handbook\"}],\"footer\":{\"message\":\"辽宁火炬网络科技文化有限责任公司 技术部\",\"copyright\":\"Copyright © 2025 火炬技术部\"},\"search\":{\"provider\":\"local\"},\"lastUpdated\":{\"text\":\"最后更新于\",\"formatOptions\":{\"dateStyle\":\"short\",\"timeStyle\":\"short\"}},\"editLink\":{\"pattern\":\"https://github.com/zmkido-ship-it/Torch-UI-Handbook\",\"text\":\"在 GitHub 上编辑此页\"}},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":false}");</script>
+    
+  </body>
+</html>
