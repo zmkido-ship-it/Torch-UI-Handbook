@@ -5,6 +5,11 @@ on:
     branches:
       - main  # 你的默认分支
 
+permissions:
+  contents: write  # 必须，用于推送代码到 gh-pages 分支
+  pages: write     # 如果你使用的是官方 Pages 部署，则需要这个
+  id-token: write  # 同上
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
