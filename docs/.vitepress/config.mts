@@ -66,7 +66,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/你的用户名/仓库名/edit/main/docs/:path',
+      pattern: 'https://github.com/zmkido-ship-it/Torch-UI-Handbook',
       text: '在 GitHub 上编辑此页'
     }
   },
