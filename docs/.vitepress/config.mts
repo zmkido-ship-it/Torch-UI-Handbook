@@ -9,36 +9,35 @@ export default defineConfig({
     // 顶部导航
     nav: [
       { text: '首页', link: '/' },
-      // 修复：移除 .html，修正锚点格式
-      { text: '设计规范', link: '/part3#6-设计规范速查' }
+      { text: '设计规范', link: '/设计规范速查' }
     ],
 
     // 侧边栏配置（多页面导航）
     sidebar: [
       {
-        text: '🚪 第一部分：入门前置',
+        text: '第一部分：入门前置🚪',
         collapsed: false,
         items: [
-          { text: '1. 软硬件工具箱', link: '/part1#1.软硬件工具箱' },
-          { text: '2. 业务黑话词典', link: '/part1#2.业务黑话词典' },
-          { text: '3. 首周闯关任务卡', link: '/part1#3.首周闯关任务卡' }
+          { text: '软硬件工具箱', link: '/软硬件工具箱' },
+          { text: '业务黑话词典', link: '/业务黑话词典' },
+          { text: '首周闯关任务卡', link: '/首周闯关任务卡' }
         ]
       },
       {
-        text: '🗺️ 第二部分：标准工作流',
+        text: '第二部分：标准工作流🗺️',
         collapsed: false,
         items: [
-          { text: '4. 火炬 UI 设计全流程', link: '/part2#4.火炬 UI 设计全流程' },
-          { text: '5. 上线后复盘与沉淀', link: '/part2#5.上线后复盘与沉淀' }
+          { text: '火炬 UI 设计全流程', link: '/火炬 UI 设计全流程' },
+          { text: '上线后复盘与沉淀', link: '/上线后复盘与沉淀' }
         ]
       },
       {
-        text: '🛡️ 第三部分：生存法则与红线',
+        text: '第三部分：生存法则与红线🛡️',
         collapsed: false,
         items: [
-          { text: '6. 设计规范速查', link: '/part3#6.设计规范速查' },
-          { text: '7. 协作与沟通铁律', link: '/part3#7.协作与沟通铁律' },
-          { text: '8. 职业素养与持续学习', link: '/part3#8.职业素养与持续学习' }
+          { text: '设计规范速查', link: '/设计规范速查' },
+          { text: '协作与沟通铁律', link: '/协作与沟通铁律' },
+          { text: '职业素养与持续学习', link: '/职业素养与持续学习' }
         ]
       }
     ],
