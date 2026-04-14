@@ -15,20 +15,24 @@ export default defineConfig({
     // 侧边栏配置（多页面导航）
     sidebar: [
       {
-        text: '第一部分：入门前置🚪',
+        text: '第一部分：入门清单🚪',
         link: '/part1'
       },
       {
-        text: '第二部分：设计规范速查📋',
+        text: '第二部分：行业黑话词典📖',
         link: '/part2'
       },
       {
-        text: '第三部分：标准工作流🗺️',
+        text: '第三部分：设计规范速查📋',
         link: '/part3'
       },
       {
-        text: '第四部分：生存法则与红线🛡️',
+        text: '第四部分：标准工作流🗺️',
         link: '/part4'
+      },
+      {
+        text: '第五部分：生存法则与红线🛡️',
+        link: '/part5'
       }
     ],
 
