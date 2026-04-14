@@ -11,7 +11,9 @@ const isActive = (link: string) => {
   if (typeof window === 'undefined') return false
   const path = page.value.relativePath.replace(/\.md$/, '')
   const target = link.replace(/^\//, '').replace(/\.html$/, '')
-  return path === target
+  // 移除锚点部分进行比较
+  const targetWithoutAnchor = target.split('#')[0]
+  return path === targetWithoutAnchor
 }
 
 // 跳转函数（增加环境检查和容错）
@@ -46,10 +48,36 @@ const handlePageNavigation = (link: string) => {
       navigateTo(`#${anchor}`)
     } else {
       // 跨页面跳转
-      window.location.href = link.endsWith('.html') || link.includes('#') ? link : `${link}.html`
+      let targetUrl = link
+      // 确保在 GitHub Pages 上使用正确的 .html 后缀
+      if (!targetUrl.endsWith('.html') && !targetUrl.includes('#')) {
+        targetUrl = `${targetUrl}.html`
+      }
+      // 确保包含基础路径
+      if (!targetUrl.startsWith('/')) {
+        targetUrl = `/${targetUrl}`
+      }
+      // 确保包含完整的基础路径
+      if (!targetUrl.startsWith('/Torch-UI-Handbook/')) {
+        targetUrl = `/Torch-UI-Handbook${targetUrl}`
+      }
+      window.location.href = targetUrl
     }
   } else {
-    window.location.href = link
+    let targetUrl = link
+    // 确保在 GitHub Pages 上使用正确的 .html 后缀
+    if (!targetUrl.endsWith('.html')) {
+      targetUrl = `${targetUrl}.html`
+    }
+    // 确保包含基础路径
+    if (!targetUrl.startsWith('/')) {
+      targetUrl = `/${targetUrl}`
+    }
+    // 确保包含完整的基础路径
+    if (!targetUrl.startsWith('/Torch-UI-Handbook/')) {
+      targetUrl = `/Torch-UI-Handbook${targetUrl}`
+    }
+    window.location.href = targetUrl
   }
 }
 
