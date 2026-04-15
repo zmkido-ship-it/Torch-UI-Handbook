@@ -19,7 +19,7 @@ export default defineConfig({
         link: '/part1'
       },
       {
-        text: '第二部分：行业黑话词典📖',
+        text: '第二部分：语聊行业名词词典📖',
         link: '/part2'
       },
       {
