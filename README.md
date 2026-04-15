@@ -35,7 +35,7 @@ git add -A
 提交到本地仓库:
 
 ```bash
-git commit -m "本次提交的描述信息"
+git commit -m "修改了一些细节"
 ```
 
 推送到远程 main 分支:
